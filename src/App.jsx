@@ -9,6 +9,7 @@ import Profile from './components/Profile';
 import OnClick from "./components/OnClick";
 import Logout from "./components/Logout";
 import UserDetails from "./components/UserDetails";
+import NetworkLayout from "./components/NetworkLayout";
 
 
 function App() {
@@ -39,8 +40,10 @@ function App() {
 
               <Route path="/" element={<Navigate to="/login" />} />
               <Route path="/login" element={loggedUser.name ? <Logout /> : <Login />} />
-              <Route path="/network" element={<Network />} />
-              <Route path="/userDetails/:id" element={<UserDetails />} />
+              <Route path="/network" element={<NetworkLayout />} >
+                <Route index element={<Network />} />
+                <Route path="userDetails/:id" element={<UserDetails />} />
+              </Route>
               <Route path="/profile" element={<Profile />} />
               <Route path="/buttons" element={<OnClick />} />
               <Route path="/test/:id" element={<UserDetails />} />

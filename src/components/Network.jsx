@@ -33,7 +33,6 @@ function Network() {
 
     return (
         <div>
-            <h2>Network</h2>
             {/* <Button text="get users" handleClick={loadUsers} /> */}
 
             <h3>{loggedUser.name ? `La rete di ${loggedUser.name}` : "Nessun utente loggato"}</h3>
