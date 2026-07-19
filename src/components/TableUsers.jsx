@@ -17,7 +17,7 @@ function TableUsers({ users, loggedUser }) {
                 .map(user => (
                     <tr key={user.id}>
                         <td>
-                            <Link to={"userDetails/" + user.id} state={user}>
+                            <Link to={"userDetails/" + user.id}>
                                 <img src={baseImgURL + user.id + ".png"} />
                             </Link>
                         </td>

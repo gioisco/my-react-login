@@ -7,8 +7,8 @@ function Network() {
     const myUsersURL = 'https://www.ugobetori.it/_notes/api-test/unauth/select_users.php';
 
 
-    const { loggedUser } = React.useContext(MyContext)
-    const [users, setUsers] = React.useState([]);
+    const { loggedUser, users, setUsers } = React.useContext(MyContext)
+    // const [users, setUsers] = React.useState([]);
 
     function loadUsers() {
         if (!loggedUser.name) {

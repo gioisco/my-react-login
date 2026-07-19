@@ -21,6 +21,7 @@ function App() {
     log: "No"
   }
   const [loggedUser, setLoggedUser] = React.useState(iniialLoggedUser);
+  const [users, setUsers] = React.useState([]);
 
   return (
     <>
@@ -34,7 +35,7 @@ function App() {
 
           <NavBar />
 
-          <MyContext.Provider value={{ loggedUser, setLoggedUser }}>
+          <MyContext.Provider value={{ loggedUser, setLoggedUser, users, setUsers }}>
 
             <Routes>
 

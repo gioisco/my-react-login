@@ -4,10 +4,11 @@ import Button from './Button'
 
 function Logout() {
 
-    const {loggedUser, setLoggedUser} = React.useContext(MyContext)
+    const {loggedUser, setLoggedUser, setUsers} = React.useContext(MyContext)
 
     const logoutUser = () => {
         setLoggedUser({})
+        setUsers([])
     }
 
     return (

@@ -3,15 +3,19 @@ import { useLocation, useParams } from 'react-router-dom';
 import MyContext from './Context';
 
 function UserDetails() {
-  const { loggedUser } = React.useContext(MyContext)
+  const { loggedUser, users} = React.useContext(MyContext)
   if (!loggedUser.name) {
     return
   }
 
+  console.log("users[UserDetails]", users)
+
   const baseImgURL = 'https://www.ugobetori.it/_notes/api-test/unauth/img/';
 
   const { id } = useParams()
-  const { state: user } = useLocation()
+  const user = users[id-1]
+
+  console.log("user[UserDetails]", user)
 
   return (
     <>
