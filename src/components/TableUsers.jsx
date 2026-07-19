@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 
-function TableUsers({users, loggedUser}) {
+function TableUsers({ users, loggedUser }) {
 
     const baseImgURL = 'https://www.ugobetori.it/_notes/api-test/unauth/img/';
 
@@ -15,7 +16,11 @@ function TableUsers({users, loggedUser}) {
                 .filter(user => user.id != loggedUser.id)
                 .map(user => (
                     <tr key={user.id}>
-                        <td><img src={baseImgURL + user.id + ".png"} /></td>
+                        <td>
+                            <Link to={"/userDetails/" + user.id} state={user}>
+                                <img src={baseImgURL + user.id + ".png"} />
+                            </Link>
+                        </td>
                         <td>{user.id}</td>
                         <td>{user.name}</td>
                         <td>{user.age}</td>
@@ -23,6 +28,8 @@ function TableUsers({users, loggedUser}) {
                 ))
         )
     }
+
+
     return (
         <table align="center">
             <thead>
