@@ -32,7 +32,7 @@ function App() {
 
           <NavBar />
 
-          <MyContext.Provider value={{loggedUser, setLoggedUser}}>
+          <MyContext.Provider value={{ loggedUser, setLoggedUser }}>
 
             <Routes>
 
