@@ -15,7 +15,7 @@ function Login() {
     const [errorMessage, setErrorMessage] = React.useState("");
 
 
-    const [loggedUser, setLoggedUser] = React.useContext(MyContext)
+    const {setLoggedUser} = React.useContext(MyContext)
 
 
     function handleChange(elementoDelForm) {
@@ -60,6 +60,15 @@ function Login() {
         <div>
             <h2>Login</h2>
 
+            <MyContext.Consumer>
+                {(contextValue) => {
+                    console.log(contextValue)
+                    return (
+                        <h5>Status: {JSON.stringify(contextValue)}</h5>
+                    )
+                }}
+            </MyContext.Consumer>
+
             <form>
                 <input
                     type="text"
@@ -79,9 +88,8 @@ function Login() {
                     onChange={e => handleChange(e.target)}
                 />
                 <br /><br />
-                {/* <input type="submit" value="Login" onClick={handleSubmit} /> */}
                 <Button text="Login" handleClick={handleSubmit()} />
-                {errorMessage && <p style={{color: "red"}}>{errorMessage}</p>}
+                {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
             </form>
 
         </div>

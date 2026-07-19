@@ -12,7 +12,7 @@ import Logout from "./components/Logout";
 
 function App() {
 
-  // Context
+  // Values for Context
   const iniialLoggedUser = {
     id: -1,
     name: "",
@@ -32,7 +32,7 @@ function App() {
 
           <NavBar />
 
-          <MyContext.Provider value={[loggedUser, setLoggedUser]}>
+          <MyContext.Provider value={{loggedUser, setLoggedUser}}>
 
             <Routes>
 
