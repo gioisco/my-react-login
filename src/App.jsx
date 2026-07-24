@@ -5,11 +5,13 @@ import NavBar from "./components/Navbar";
 import MyContext from './components/Context';
 import Login from './components/Login';
 import Network from './components/Network';
-import Profile from './components/Profile';
+import ProfileLayout from './components/Profile';
 import OnClick from "./components/OnClick";
 import Logout from "./components/Logout";
 import UserDetails from "./components/UserDetails";
 import NetworkLayout from "./components/NetworkLayout";
+import Profile from "./components/Profile";
+import SimpleProfile from "./components/SimpleProfile";
 
 
 function App() {
@@ -46,8 +48,9 @@ function App() {
                 <Route path="userDetails/:id" element={<UserDetails />} />
               </Route>
               <Route path="/profile" element={<Profile />} />
+              <Route path="/profile-simple" element={<SimpleProfile />} />
+
               <Route path="/buttons" element={<OnClick />} />
-              <Route path="/test/:id" element={<UserDetails />} />
 
             </Routes>
           </MyContext.Provider>

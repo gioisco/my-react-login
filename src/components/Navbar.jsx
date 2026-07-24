@@ -7,6 +7,10 @@ function NavBar() {
                 <li><Link to="/login">Login</Link></li>
                 <li><Link to="/network">Network</Link></li>
                 <li><Link to="/profile">Profile</Link></li>
+                <br />
+                <li><Link to="/profile-simple">Simple Profile</Link></li>
+                <br />
+
                 <li><Link to="/buttons">OnClick examples</Link></li>
                 <li><Link to="/test/1">Test New Route</Link></li>
             </ul>
