@@ -7,9 +7,11 @@ function SimpleProfile() {
     const { loggedUser } = React.useContext(MyContext);
     const [profile, setProfile] = React.useState("");
 
+    const myUsersURL = 'https://www.ugobetori.it/_notes/api-test/unauth/select_users.php';
+
     function loadProfile() {
 
-        console.log(loadProfile())
+        console.log("loadProfile()")
 
         fetch(myUsersURL)
             .then(response => response.json())
@@ -22,14 +24,14 @@ function SimpleProfile() {
 
     React.useEffect(() => {
         console.log("useEffect()")
-        if (loggedUser.name) {
+        if (!loggedUser.name) {
             loadProfile();
         }
     }, [loggedUser.id]);
 
 
     return (
-        <div>Simple Profile: {profile?.name}</div>
+        <div>Simple Profile: {profile.name}</div>
 
     )
 }
